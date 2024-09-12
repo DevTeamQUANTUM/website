@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantum Agency is a global leader in strategic crypto media communication. Learn how we raised $24 million for three major projects in 2024.">
+<meta name="keywords" content="Quantum Agency, cryptocurrency, crypto marketing, strategic media, digital marketing">
+<meta name="author" content="Quantum Agency">
+<link rel="icon" href="Logo Q Beige.svg" type="image/svg+xml">
+
+    <title>Quantum Agency</title>
+    
+    <!-- Importing the fonts -->
+    <style>
+        @font-face {
+            font-family: 'Plain-Regular';
+            src: url('Plain-Regular.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Plain-Bold';
+            src: url('Plain-Bold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Plain-Light';
+            src: url('Plain-Light.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Plain-Hairline';
+            src: url('Plain-Hairline.otf') format('opentype');
+        }
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    background-color:white;
+    overflow: hidden;
+        }
+
+
+        #logo {
+            position: absolute;
+            z-index: 1;
+            width: 70vw;
+            opacity: 1;
+            transform: scale(0.5);
+            animation: appear-move-top 3s forwards;
+          bottom:35vh
+        }
+
+        #initial-logo {
+            position: absolute;
+            z-index: 1;
+            width: 1200px;
+            animation: big-slow-pause-shrink 1.5s forwards;
+        }
+
+        @keyframes big-slow-pause-shrink {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.01);
+                opacity: 0;
+            }
+        }
+
+        @keyframes appear-move-top {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            66% {
+                transform: translateY(-30vh);
+            }
+            100% {
+                transform: translateY(-30vh);
+            }
+        }
+
+        /* Bottom Left Buttons */
+        .bottom-left {
+            position: absolute;
+            bottom: 7vh;
+            left: 15vw;
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* Styles for "Book a Call" Button */
+        .call-btn {
+    font-family: 'Plain-Bold', sans-serif;
+    padding: 0px 35px ; /* Reduce the padding */
+    background-color: rgb(208, 200, 191);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px; /* Smaller border-radius */
+    text-align: center;
+    font-size: 20px ; /* Reduce the font size */
+    white-space: nowrap;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: auto !important;
+    width: auto !important; /* Ensure no fixed width is applied */
+}
+
+
+.button-row {
+    display: flex; /* Make the container a flexbox */
+    /* Space out the buttons */
+    align-items: center; /* Align them vertically */
+    gap: 15px; /* Space between buttons */
+    width: 100%; /* Make sure it takes the full width */
+}
+.faq-btn {
+    padding: 10px 30px;
+    background-color: rgb(0, 0, 0,0.8);
+    color: rgb(255, 255, 255);
+   
+    border-radius: 65px;
+    font-family: 'Plain-bold', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+
+    position: fixed; /* Fix the position to the viewport */
+    bottom: 94vh;       /* Set it 10px from the top */
+    right: 15vw;     /* Set it 10px from the right */
+  /* Make sure it's on top of the logo */
+}
+
+/* Styles for "Download" Button */
+.download-btn {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: transparent;
+    color:rgb(208, 200, 191);
+    text-decoration: none;
+    border: none;
+    font-family: 'Plain-Bold', sans-serif;
+    font-size: 20px;
+    white-space: nowrap; 
+
+    border-radius: 65px;
+}
+
+.download-icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+
+        /* Bottom Right Social Media Buttons */
+        .bottom-right {
+            position: absolute;
+            bottom: 7vh;
+            right: 15vw;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-btn {
+            width: 64px;
+            height: 64px;
+        }
+
+        .call-btn:hover, 
+.download-btn:hover, .faq-btn:hover {
+    transform: scale(1.1);  /* Increase size by 5% */
+    transition: transform 0.3s ease;  /* Smooth transition */
+}
+
+/* Hover effect for social media icons */
+.social-btn:hover {
+    transform: scale(1.3);  /* Increase size by 10% */
+    transition: transform 0.3s ease;  /* Smooth transition */
+}
+
+
+.usp-carousel {
+    position: absolute;
+    width: 21vw;
+    height: auto;
+    text-align: right;
+   
+    line-height: 1.2;
+    opacity: 0;
+    right:15vw;
+    top:36vh;
+
+}
+
+.usp-slide {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+   margin-top:0vh;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+    font-family:'Plain-Light';
+    text-transform: uppercase; 
+    font-size:20px ;
+    color:rgb(0, 0, 0)
+}
+
+.usp-slide.active {
+    opacity: 1;
+}
+
+
+
+
+
+
+strong {
+        font-family: 'Plain-bold', sans-serif;
+        font-weight: normal; /* Ensures it's not extra bold */
+    }
+
+
+/* Initially hide the buttons and the USP text */
+.bottom-left, .bottom-right, #usp-section {
+    opacity: 0;  /* Hidden initially */
+    transition: opacity 1s ease;  /* Smooth fade-in */
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    font-family: 'plain-regular', sans-serif;
+}
+
+.faq-item {
+
+    border-bottom: 1px solid #ccc;
+    padding: 15px 15px;
+}
+
+.faq-question {
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: rgb(213, 197, 163);
+}
+
+.faq-answer {
+    display: none;
+    padding-top: 10px;
+    font-size: 1em;
+    line-height: 1.5;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    max-height: 200px;
+    opacity: 1;
+}
+
+.faq-item.active .faq-question::after {
+    content: '-';
+    position: absolute;
+    right: 0;
+    font-size: 1.5em;
+    color: rgb(213, 197, 163);
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 1.5em;
+    color: rgb(213, 197, 163);
+}
+/* Modal FAQ styles */
+/* Modal FAQ styles */
+.faq-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Modal background */
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh; /* Limit the modal content height to 80% of the viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
+    position: relative;
+}
+
+.faq-modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* FAQ Container Scrollable */
+.faq-container {
+    max-height: calc(80vh - 40px); /* Allow the FAQ container to scroll */
+    overflow-y: auto;
+}
+
+/* FAQ Answer Styles */
+.faq-answer {
+    display: none;
+    padding-top: 10px;
+    font-size: 1em;
+    line-height: 1.5;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    max-height: 200px;
+    opacity: 1;
+}
+
+
+@media (max-width: 2000px){   #logo{      bottom:40vh} .usp-carousel{    top:33vh;}}
+
+
+
+@media (max-width: 1600px) {#logo{      bottom:45vh} .faq-btn{font-size:10px; bottom:96vh}
+
+.usp-carousel{    top:28vh;}
+    .usp-slide {
+        font-size: 18px; /* Adjust to your preferred smaller size */
+    }
+
+  
+}
+
+
+@media (max-width: 1400px) {
+    .usp-slide {
+        font-size: 16px; /* Adjust to your preferred smaller size */
+    }
+
+
+    .social-btn {
+            width: 44px;
+            height: 44px;
+        }
+
+        .download-icon {
+    width: 44px;
+    height: 44px;
+    margin-right: 8px;
+    align-items: center;
+    text-align: center;
+}
+}
+
+
+@media (max-width: 1200px) {
+    .usp-slide {
+        font-size: 14px; /* Adjust to your preferred smaller size */
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+    .usp-slide {
+        font-size: 12px; /* Adjust to your preferred smaller size */
+    }
+
+    .social-btn {
+            width: 34px;
+            height: 34px;
+        }
+
+        .download-icon {
+    width: 34px;
+    height: 34px;
+    margin-right: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+.download-btn{   font-size: 15px;}
+
+
+.call-btn{font-size:15px}
+
+}
+
+
+
+@media (max-width: 1000px) {
+    .usp-slide {
+        font-size: 10px; /* Adjust to your preferred smaller size */
+    }
+}
+
+@media (max-width: 800px) {
+    .usp-slide {
+        font-size: 10px; /* Adjust to your preferred smaller size */
+    }
+    .social-btn {
+            width: 30px;
+            height: 30px;
+        }
+
+        .download-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+.download-btn{   font-size: 10px;}
+
+
+.call-btn{font-size:10px}
+}
+
+@media (max-width: 600px) {
+
+    .faq-btn{right:5vw;bottom:90vh}
+    .usp-slide {
+        font-size: 15px; /* Adjust font size */
+    }
+    
+    .usp-carousel {
+        width: 70vw;
+    }
+
+    /* Change bottom left buttons to column layout and move to the top */
+    .bottom-left {
+        position: absolute;
+        top: 70vh; /* Move to the top (adjust as needed) */
+        left: 5vw; /* Adjust horizontal alignment */
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Change social media buttons to column layout and move to the top */
+    .bottom-right {
+        position: absolute;
+        top: 70vh; /* Move to the top, aligned with buttons */
+        right: 5vw; /* Adjust horizontal alignment */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    #download-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+
+
+      
+
+    .download-btn {
+        font-size: 20px;
+        border: 3px solid rgb(208, 200, 191);
+        padding:13px 15px
+    }
+
+    .call-btn {
+        font-size: 20px;
+        padding: 15px 40px;
+    }
+
+    #logo {
+        width: 90vw;
+    }
+
+    .usp-carousel {
+        right: 5vw;
+    }
+}
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <!-- Background Shader -->
+    <shader-art autoplay no-controls>
+        <uniform type="float" name="scale" value="0.13" min="0.1" max="4" step="0.01" />
+        <uniform type="float" name="ax" value="2.35" min="1" max="15" step="0.01" />
+        <uniform type="float" name="ay" value="7" min="1" max="15" step="0.01" />
+        <uniform type="float" name="az" value="1.12" min="1" max="15" step="0.01" />
+        <uniform type="float" name="aw" value="13" min="1" max="15" step="0.01" />
+        <uniform type="float" name="bx" value="1" min="-1" max="1" step="0.01" />
+        <uniform type="float" name="by" value="1" min="-1" max="1" step="0.01" />
+        <uniform type="color" name="color1" value="#d4d4d4" />
+        <uniform type="color" name="color2" value="#d4cccc" />
+        <uniform type="color" name="color3" value="#ffcc8e" />
+        <uniform type="color" name="color4" value="#ffffff" />
+        
+        <script type="buffer" name="position" data-size="2">
+            [-1, 1, -1,-1, 1,1, 1, 1, -1,-1, 1,-1]
+        </script>
+        <script type="buffer" name="uv" data-size="2">
+            [ 0, 0,  0, 1, 1,0, 1, 0,  0, 1, 1, 1]
+        </script>
+        <script type="vert">
+            precision highp float;
+            attribute vec4 position;
+            attribute vec2 uv;
+            varying vec2 vUv;
+            void main() {
+                vUv = uv;
+                gl_Position = position;
+            }
+        </script>
+        <script type="frag">
+            precision highp float;
+            varying vec2 vUv;
+            uniform float time;
+            uniform float scale;
+            uniform vec2 resolution;
+            uniform vec3 color1, color2, color3, color4;
+            uniform int numOctaves;
+            const float PI = 3.141592654;
+            uniform float ax, ay, az, aw;
+            uniform float bx, by;
+            
+            float cheapNoise(vec3 stp) {
+              vec3 p = vec3(stp.st, stp.p);
+              vec4 a = vec4(ax, ay, az, aw);
+              return mix(
+                sin(p.z + p.x * a.x + cos(p.x * a.x - p.z)) * 
+                cos(p.z + p.y * a.y + cos(p.y * a.x + p.z)),
+                sin(1. + p.x * a.z + p.z + cos(p.y * a.w - p.z)) * 
+                cos(1. + p.y * a.w + p.z + cos(p.x * a.x + p.z)), 
+                .436
+              );
+            }
+            
+            void main() {
+              vec2 aR = vec2(resolution.x/resolution.y, 1.);
+              vec2 st = vUv * aR * scale;
+              float S = sin(time * .0000125);
+              float C = cos(time * .0000125);
+              vec2 v1 = vec2(cheapNoise(vec3(st, 2.)), cheapNoise(vec3(st, 1.)));
+              vec2 v2 = vec2(
+                cheapNoise(vec3(st + bx*v1 + vec2(C * 1.7, S * 9.2), 0.15 * time)),
+                cheapNoise(vec3(st + by*v1 + vec2(S * 8.3, C * 2.8), 0.126 * time))
+              );
+              float n = .5 + .5 * cheapNoise(vec3(st + v2, 0.));
+              
+              vec3 color = mix(color1,
+                color2,
+                clamp((n*n)*8.,0.0,1.0));
+
+              color = mix(color,
+                color3,
+                clamp(length(v1),0.0,1.0));
+
+              color = mix(color,
+                color4,
+                clamp(length(v2.x),0.0,1.0));
+              
+              color /= n*n + n * 7.;
+              gl_FragColor = vec4(color,.4);
+            }
+
+            
+        </script>
+        <script>
+            // Set a timeout to make elements appear at a specific time after the animation starts
+            setTimeout(function() {
+                // Show the USP section
+                document.querySelector('.bottom-left').style.opacity = '1';
+                document.querySelector('.bottom-right').style.opacity = '1';
+                document.getElementById('usp-section').style.opacity = '1';
+        
+                // Show the buttons
+             
+            }, 2000); // Adjust the time in milliseconds (2000ms = 2 seconds)
+        </script>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.usp-slide');
+            const uspCarousel = document.querySelector('.usp-carousel');
+        
+            // Show the USP carousel after 2 seconds
+            setTimeout(function() {
+                uspCarousel.style.opacity = '1'; // Make the USP carousel visible
+        
+                function showSlides() {
+                    slides.forEach((slide) => {
+                        slide.classList.remove('active');
+                    });
+                    slides[slideIndex].classList.add('active');
+                    slideIndex = (slideIndex + 1) % slides.length; // Loop back to the first slide after the last
+                }
+        
+                // Show the first slide initially
+                showSlides();
+        
+                // Change slides every 5 seconds
+                setInterval(showSlides, 5000);
+        
+            }, 2000); // Delay the slider by 2 seconds
+        });
+        </script>
+        
+        </script>
+        <script>// Get all FAQ question elements
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            // Loop through each question element
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const parent = question.parentElement;
+            
+                    // Toggle active class to open/close the FAQ
+                    parent.classList.toggle('active');
+            
+                    // Optionally, close other FAQs when one is clicked
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== parent) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            </script>
+         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get the modal element
+                const faqModal = document.getElementById("faqModal");
+            
+                // Get the FAQ button that opens the modal
+                const faqBtn = document.querySelector(".faq-btn");
+            
+                // Get the close button element
+                const closeModal = document.querySelector(".faq-modal .close");
+            
+                // Open the FAQ modal when the button is clicked
+                faqBtn.addEventListener("click", function() {
+                    faqModal.style.display = "flex"; // Show the modal
+                });
+            
+                // Close the modal when the close button is clicked
+                closeModal.addEventListener("click", function() {
+                    faqModal.style.display = "none"; // Hide the modal
+                });
+            
+                // Close the modal if the user clicks outside the modal content
+                window.addEventListener("click", function(event) {
+                    if (event.target === faqModal) {
+                        faqModal.style.display = "none"; // Hide the modal if clicked outside
+                    }
+                });
+            
+                // FAQ toggle functionality
+                const faqQuestions = document.querySelectorAll('.faq-question');
+                faqQuestions.forEach(question => {
+                    question.addEventListener('click', () => {
+                        const parent = question.parentElement;
+                        parent.classList.toggle('active'); // Toggle active class to open/close the answer
+                    });
+                });
+            });
+            </script>
+            
+            <script>
+                // Function to update the src of the download icon based on window width
+                function updateDownloadIcon() {
+                    var downloadIcon = document.getElementById('download-icon');
+                    
+                    if (window.innerWidth <= 600) {
+                        downloadIcon.src = 'Frame 6.svg';  // New source for 600px width or below
+                    } else {
+                        downloadIcon.src = 'download circled outline_ (1).png';  // Default source
+                    }
+                }
+            
+                // Call the function on window resize and page load
+                window.addEventListener('resize', updateDownloadIcon);
+                window.addEventListener('load', updateDownloadIcon);
+            </script>
+            
+   
+    </shader-art>
+
+    <!-- Quantum Logo SVG (Initial Zoom and Fade Out) -->
+    <img id="initial-logo" src="Logo Q Black.svg" alt="Initial Quantum Logo">
+
+    <!-- Quantum Logo SVG (Appears after Initial Fades Out) -->
+    <img id="logo" src="Logo Quantum Black.svg" alt="Quantum Logo">
+ 
+    <div class="usp-carousel">
+        <div class="usp-slide active">Quantum Agency is a <strong>global leader</strong> in strategic crypto media communication.</div>
+            <div class="usp-slide">  In 2024, <strong>Quantum Agency has raised $24 million</strong> for three major projects, leveraging our strategic network for success. 
+            </div>
+        <div class="usp-slide"> Quantum Agency is reaching <strong>over 5 million followers</strong>  on Twitter.        </div>
+            
+            <div class="usp-slide">Quantum also manage <strong>20+ organic media accounts</strong> for campaigns with KoLs.</div>
+            <div class="usp-slide"> Since 2020, we’ve built a strong network with top Hubs in key crypto markets like <strong>BTC, ICP, ETH, TON, and SOL. </strong> </div>
+  
+        <div class="usp-slide"> By using<strong> advanced analytics</strong> , Quantum can spot market trends and deliver <strong>tailored solutions</strong> to fit each client's unique project goals.
+        </div>
+        <div class="usp-slide">We don't sell strategies that we haven't personally used, we know how to <strong>kill the FUD and drive FOMO </strong> . </div>
+        <div class="usp-slide"> Quantum agency's team <strong>excels in content creatio</strong>n, with expertise in Motion 3D and Unreal Engine 5.</div>
+        <div class="usp-slide">
+            QUANTUM Agency is based mostly in <strong>Switzerland</strong> , Paris, Porto and Buenos Aires</div>
+ 
+
+      
+        
+     
+        
+       
+    </div>
+    
+    
+
+    
+    <!-- Bottom Left Buttons -->
+  <!-- Bottom Left Buttons -->
+<div class="bottom-left">
+    <a href="https://calendly.com/contact-quantumagency/30min" class="call-btn">Book Intro Call</a>
+    <div class="button-row">
+        <!-- Download button -->
+        <a href="Quantum_CASESTUDY.pdf" class="download-btn" download>
+            <img id="download-icon" src="download circled outline_ (1).png" alt="Download Icon" class="download-icon">
+            Last Case Study
+        </a>
+    
+        <!-- FAQ button -->
+      <!-- FAQ button -->
+      <button class="faq-btn">FAQ</button>
+
+
+    </div>
+    
+</div>
+
+
+    <!-- Bottom Right Social Media Buttons -->
+    <div class="bottom-right">
+  <!-- Instagram link -->
+<a href="https://www.instagram.com/quantum.ai" target="_blank" rel="noopener noreferrer">
+    <img class="social-btn" src="Fichier 256.svg" alt="Instagram">
+</a>
+
+<!-- X (formerly Twitter) link -->
+<a href="https://x.com/Quantumagencyai" target="_blank" rel="noopener noreferrer">
+    <img class="social-btn" src="Fichier 237.svg" alt="Twitter">
+</a>
+
+<!-- LinkedIn link -->
+<a href="https://www.linkedin.com/company/quantumagency-ai/" target="_blank" rel="noopener noreferrer">
+    <img class="social-btn" src="Fichier 248.svg" alt="LinkedIn">
+</a>
+
+    </div>
+<!-- FAQ Modal Structure -->
+<div id="faqModal" class="faq-modal">
+    <div class="faq-modal-content">
+        <span class="close">&times;</span>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3 class="faq-question">Why does Quantum prioritize organic strategies in its digital marketing campaigns ?</h3>
+                <p class="faq-answer">
+                    Quantum prioritizes organic strategies to build sustainable and authentic engagement. We believe in cultivating genuine connections between our clients and their audiences, which leads to higher trust and better long-term results compared to paid advertising alone.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What is growth hacking, and how does Quantum utilize this method in the cryptocurrency market ?</h3>
+                <p class="faq-answer">
+                    Growth hacking is about finding cost-effective, creative, and rapid growth strategies through various marketing and product iterations. At Quantum, we apply growth hacking by quickly testing and scaling strategies that drive user acquisition and engagement, particularly effective in the fast-paced crypto market.
+                </p>
+            </div>
+        
+            <div class="faq-item">
+                <h3 class="faq-question">How has Quantum established itself as the most influential digital marketing agency in the cryptocurrency space ?</h3>
+                <p class="faq-answer">
+                    Quantum has become a leader in the space by consistently delivering successful outcomes for high-profile projects, maintaining a vast network of industry contacts, and achieving measurable results that exceed our clients' expectations.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What role do advanced analytics play in Quantum’s campaign strategies ?</h3>
+                <p class="faq-answer">
+                    Advanced analytics are central to our strategies, allowing us to track, analyze, and respond to data in real-time. This approach ensures our campaigns are data-driven and optimized for the highest performance across all platforms.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">How does Quantum ensure its marketing strategies remain compliant with international crypto regulations ?</h3>
+                <p class="faq-answer">
+                    We stay updated with the latest regulations in every market we operate in, ensuring all our campaigns are compliant. Our legal team works closely with our marketing strategists to navigate the complex landscape of international cryptocurrency regulations.
+                </p>
+            </div>
+        
+            <!-- Continue with the remaining questions and answers... -->
+        </div>
+        
+    </div>
+</div>
+
+</body>
+</html>
